@@ -1,7 +1,7 @@
 # FabSoft Universal Printer Driver - API Sample / Template
 The FabSoft Universal Printer Driver (UPD) allows plugins to control how documents are delivered. As there are various requirements for different destination, this sample only provides a template and overview of the capabilities. For working samples that implement the API, see the "Working Samples" section below.
 
-**This sample demonstrates:**
+**This sample provides templates for:**
 
 * Creating the properties available in the workflow.
 * Creating a custom filter to clean data.
