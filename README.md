@@ -5,7 +5,7 @@ The FabSoft Universal Printer Driver (UPD) allows plugins to control how documen
 
 * Creating the properties available in the workflow.
 * Creating a custom filter to clean data.
-* Submitting the printed document to a back-end web service.
+* Submitting the printed document to a back-end location/service.
 * Refreshing the status (For scenarios where the status is not available at the time of submission).
 
 
