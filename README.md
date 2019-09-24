@@ -8,6 +8,7 @@ The FabSoft Universal Printer Driver (UPD) allows plugins to control how documen
 * Submitting the printed document to a back-end location/service.
 * Refreshing the status (For scenarios where the status is not available at the time of submission).
 
+**API Documentation:** https://github.com/fabsoft-upd/SamplePlugin/wiki
 
 **Working Samples**
 * [SMTP Email](https://github.com/fabsoft-upd/SmtpEmail)
