@@ -21,7 +21,7 @@ namespace SampleUpdPlugin
         }
 
         private const int LATEST_VERSION = 1;
-        public override int WorkflowVersion { get; set; } = LATEST_VERSION; // Don't hard code the get, needed for upgrades
+        public override int WorkflowVersion { get; set; } = LATEST_VERSION; // Don't return a hard code value in the get. Change the LATEST_VERSION variable. This is needed for upgrading workflows.
 
         public override DocumentWorkflow UpgradeWorkflow()
         {
