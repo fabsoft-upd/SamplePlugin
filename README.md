@@ -18,4 +18,6 @@ The FabSoft Universal Printer Driver (UPD) allows plugins to control how documen
 
 **This sample project will produce the following configuration options:**
 
-[![SamplePluginUi.png](../../../SamplePlugin/wiki/images/SamplePluginUi.png)](../../../SamplePlugin/wiki/images/SamplePluginUi.png)
+| Note | Screenshot |
+|---|---|
+| Configuration Properties |[![SamplePluginUi.png](../../../SamplePlugin/wiki/images/SamplePluginUi.png)](../../../SamplePlugin/wiki/images/SamplePluginUi.png)|
