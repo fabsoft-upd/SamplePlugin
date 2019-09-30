@@ -13,3 +13,9 @@ The FabSoft Universal Printer Driver (UPD) allows plugins to control how documen
 **Working Samples**
 * [SMTP Email](https://github.com/fabsoft-upd/SmtpEmailPlugin)
 * [EtherFax Cloud Based Faxing](https://github.com/fabsoft-upd/EtherFaxPlugin)
+
+***
+
+**This sample project will produce the following configuration options:**
+
+[![SamplePluginUi.png](images/SamplePluginUi.png)](images/SamplePluginUi.png)
