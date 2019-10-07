@@ -105,7 +105,7 @@ namespace SampleUpdPlugin
             };
         }
 
-        public override SubmissionStatus ServiceSubmit(string jobName, string jobPath, string fclInfo, Dictionary<string, string> driverSettings, Logger externalHandler, Stream xpsStream, int pageIndexStart, int pageIndexEnd, List<PageDimensions> pageDimensions)
+        public override SubmissionStatus ServiceSubmit(string jobName, string fclInfo, Dictionary<string, string> driverSettings, Logger externalHandler, Stream xpsStream, int pageIndexStart, int pageIndexEnd, List<PageDimensions> pageDimensions)
         {
 
             AttachDebugger();
@@ -116,27 +116,24 @@ namespace SampleUpdPlugin
             try
             {
 
-                BaseProperty username = null;
-                BaseProperty password = null;
-                BaseProperty destination = null;
-                OutputImageTypeProperty outputImageType = null;
-                
-                if (!GetProperty("username", out username, false) || username == null)
+                string username = GetPropertyResult("username", "", false);
+                string password = GetPropertyResult("password", "", false);
+                string destination = GetPropertyResult("destination", "", false);
+                if (string.IsNullOrWhiteSpace(username))
                 {
                     throw new Exception("Missing property: username");
                 }
-                
-                if (!GetProperty("password", out password, false) || password == null)
+                if (string.IsNullOrWhiteSpace(password))
                 {
                     throw new Exception("Missing property: password");
                 }
-                
-                if (!GetProperty("destination", out destination, false) || destination == null)
+                if (string.IsNullOrWhiteSpace(destination))
                 {
                     throw new Exception("Missing property: destination");
                 }
-                            
-                if (!GetProperty("outputImageType", out outputImageType, false) || outputImageType == null)
+
+                var outputImageType = GetProperty<OutputImageTypeProperty>("outputImageType", false);
+                if (outputImageType == null)
                 {
                     throw new Exception("Missing property: outputImageType");
                 }
@@ -169,7 +166,7 @@ namespace SampleUpdPlugin
                         outputStream.Seek(0, SeekOrigin.Begin);
 
                         string jobId;
-                        if (SubmitDocumentWithCustomLogic(outputStream, username.GetResult(), password.GetResult(), destination.GetResult(), out jobId))
+                        if (SubmitDocumentWithCustomLogic(outputStream, username, password, destination, out jobId))
                         {
                             status.Result = true;
                             status.Message = "Successfully Submitted";
