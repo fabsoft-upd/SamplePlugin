@@ -10,6 +10,7 @@ using FabSoftUpd.Wizard;
 using System.Net;
 using System.Reflection;
 using System.Windows.Media.Imaging;
+using FabSoftUpd.IO;
 
 namespace SampleUpdPlugin
 {
