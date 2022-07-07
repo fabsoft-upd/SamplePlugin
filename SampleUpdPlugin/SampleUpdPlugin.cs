@@ -59,6 +59,8 @@ namespace SampleUpdPlugin
             }
         }
 
+        public override string LicenseName => "DAD_Base";
+
         [System.Diagnostics.Conditional("DEBUG")]
         private static void AttachDebugger() // Attach debugger if none is already attached and it is compiled for DEBUG.
         {
@@ -106,7 +108,7 @@ namespace SampleUpdPlugin
             };
         }
 
-        public override SubmissionStatus ServiceSubmit(string jobName, string fclInfo, Dictionary<string, string> driverSettings, Logger externalHandler, Stream xpsStream, int pageIndexStart, int pageIndexEnd, List<PageDimensions> pageDimensions)
+        public override SubmissionStatus ServiceSubmit(string jobName, List<KeyValuePair<string, string>> variableData, Dictionary<string, string> driverSettings, Logger applicationLog, Stream xpsStream, int pageIndexStart, int pageIndexEnd, List<PageDimensions> pageDimensions)
         {
 
             AttachDebugger();
@@ -163,7 +165,7 @@ namespace SampleUpdPlugin
                             outputStream = new TempFileStream(tempFolder);
                         }
 
-                        renderingConverter.RenderXpsToOutput(xpsStream, outputStream, pageIndexStart, pageIndexEnd, externalHandler);
+                        renderingConverter.RenderXpsToOutput(xpsStream, outputStream, pageIndexStart, pageIndexEnd, applicationLog);
                         outputStream.Seek(0, SeekOrigin.Begin);
 
                         string jobId;
@@ -207,7 +209,5 @@ namespace SampleUpdPlugin
 
             return success;
         }
-    
-        
     }
 }
